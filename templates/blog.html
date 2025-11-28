@@ -1,8 +1,8 @@
 {% extends "left-sidebar.html" %}
 
-{% block title %}Blog{% endblock %}
+{% block title %}&#128196;Blog&#128196;{% endblock %}
 
-{% block logo%}Blog{% endblock %}
+{% block logo%}&#128196;Blog{% endblock %}
 
 {% block nav %}
 <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -13,28 +13,48 @@
 <li><a href="{{ url_for('projects') }}">Projects</a></li>
 {% endblock %}
 
-{% block content_title %}Blog{% endblock %}
+{% block content_title %}This is me{% endblock %}
 
 
 {% block block1%}
-
 <section class="box">
     <a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
     <header>
-        <h3>Sed etiam lorem nulla</h3>
+        <h3>&#128187;&#128200; GitHub account</h3>
     </header>
-    <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+    <p>
+        If you are interested to have a look over one of my projects, just press the button below in order to access my
+        GitHub account and check my repositories.
+    </p>
     <footer>
-        <a href="#" class="button alt">Magna sed taciti</a>
+        <a href="https://github.com/DraghiciAndrei1307" class="button alt">GitHub</a>
     </footer>
 </section>
+{%endblock%}
 
-{% endblock %}
 
-{% block block2_menu_title %}Recent blogs{% endblock %}
-{% block block2_menu_description %}Here are some of the newest blogs on this page{% endblock %}
-{% block block2_item1 %}<a href="{{ url_for('day_1') }}">Day #1</a>{% endblock %}
-{% block block2_item2 %}<a href="#">Day #2</a>{% endblock %}
-{% block block2_item3 %}<a href="#">Day #3</a>{% endblock %}
-{% block block2_item4 %}<a href="#">Day #4</a>{% endblock %}
+{% block block2%}
+<section class="box">
+    <header>
+        <h3>{% block block2_menu_title %}Recent blogs{% endblock %}</h3>
+    </header>
+    <p>{% block block2_menu_description %}Here are some of the newest blogs on this page{% endblock %}</p>
+        <ul class="divided">
+            <li>{% block block2_item1 %}<a href="{{ url_for('day_1') }}">Day #1</a>{% endblock %}</li>
+            <li>{% block block2_item2 %}<a href="#">Day #2</a>{% endblock %}</li>
+            <li>{% block block2_item3 %}<a href="#">Day #3</a>{% endblock %}</li>
+            <li>{% block block2_item4 %}<a href="#">Day #4</a>{% endblock %}</li>
+        </ul>
+    <footer>
+        <a href="https://www.linkedin.com/in/andrei-draghici1307/" class="button alt">Linkedin</a>
+    </footer>
+</section>
+{%endblock%}
+
+
+
+
+
+
+
 

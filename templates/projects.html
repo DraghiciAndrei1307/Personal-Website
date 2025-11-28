@@ -1,8 +1,8 @@
 {% extends "left-sidebar.html" %}
 
-{% block title %}Projects{% endblock %}
+{% block title %}&#128640;Projects{% endblock %}
 
-{% block logo%}Projects{% endblock %}
+{% block logo%}&#128640;Projects{% endblock %}
 
 {% block nav %}
 <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -13,4 +13,40 @@
 <li class="current"><a href="{{ url_for('projects') }}">Projects</a></li>
 {% endblock %}
 
-{% block content_title %}Projects{% endblock %}
+{% block content_title %}My Portofolio{% endblock %}
+
+
+
+{% block block1%}
+<section class="box">
+    <a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+    <header>
+        <h3>&#128187;&#128200; GitHub account</h3>
+    </header>
+    <p>
+        If you are interested to have a look over one of my projects, just press the button below in order to access my
+        GitHub account and check my repositories.
+    </p>
+    <footer>
+        <a href="https://github.com/DraghiciAndrei1307" class="button alt">GitHub</a>
+    </footer>
+</section>
+{%endblock%}
+
+{% block block2%}
+<section class="box">
+    <header>
+        <h3>{% block block2_menu_title %}&#129333;&#128200; LinkedIn account{% endblock %}</h3>
+    </header>
+    <p>{% block block2_menu_description %}Let's get in touch!{% endblock %}</p>
+<!--    <ul class="divided">-->
+<!--        <li>{% block block2_item1 %}{% endblock %}</li>-->
+<!--        <li>{% block block2_item2 %}{% endblock %}</li>-->
+<!--        <li>{% block block2_item3 %}{% endblock %}</li>-->
+<!--        <li>{% block block2_item4 %}{% endblock %}</li>-->
+<!--    </ul>-->
+    <footer>
+        <a href="https://www.linkedin.com/in/andrei-draghici1307/" class="button alt">Linkedin</a>
+    </footer>
+</section>
+{%endblock%}
