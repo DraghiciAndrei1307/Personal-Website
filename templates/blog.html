@@ -1,0 +1,40 @@
+{% extends "left-sidebar.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block logo%}Blog{% endblock %}
+
+{% block nav %}
+<li><a href="{{ url_for('home') }}">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>
+<li><a href="{{ url_for('studies') }}">Studies</a></li>
+<li><a href="{{ url_for('career') }}">Career</a></li>
+<li class="current"><a href="{{ url_for('blog') }}">Blog</a></li>
+<li><a href="{{ url_for('projects') }}">Projects</a></li>
+{% endblock %}
+
+{% block content_title %}Blog{% endblock %}
+
+
+{% block block1%}
+
+<section class="box">
+    <a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+    <header>
+        <h3>Sed etiam lorem nulla</h3>
+    </header>
+    <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+    <footer>
+        <a href="#" class="button alt">Magna sed taciti</a>
+    </footer>
+</section>
+
+{% endblock %}
+
+{% block block2_menu_title %}Recent blogs{% endblock %}
+{% block block2_menu_description %}Here are some of the newest blogs on this page{% endblock %}
+{% block block2_item1 %}<a href="{{ url_for('day_1') }}">Day #1</a>{% endblock %}
+{% block block2_item2 %}<a href="#">Day #2</a>{% endblock %}
+{% block block2_item3 %}<a href="#">Day #3</a>{% endblock %}
+{% block block2_item4 %}<a href="#">Day #4</a>{% endblock %}
+
