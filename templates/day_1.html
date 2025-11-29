@@ -6,6 +6,7 @@
 {% block logo %}Day #1{% endblock %}
 
 {% block content_title %}Day #1{% endblock %}
+{% block content_date %}Date: November 29, 2025{% endblock %}
 {% block content_subtitle %}Scheduling jobs in the Red Hat 9 environment{% endblock %}
 
 {%block content%}
@@ -49,22 +50,78 @@
         achieve that:
     </p>
     <ul>
-        <li>Using Systemd time units</li>
+        <li>Using Systemd timer units</li>
         <li>Using the old, but awesome, crond</li>
-        <li>To be continued</li>
+        <li>Using the at utility</li>
     </ul>
     <p>
-        lalalala
+        I am going to say a few words about each one of them in the following section.
     </p>
 </section>
 <section>
     <header>
-        <h3>So in conclusion ...</h3>
+        <h3>The Systemd timers </h3>
     </header>
     <p>
-        lalalala
+        Here are some interesting ideas:
     </p>
+    <ul>
+        <li>
+            The <b>Systemd timers</b> are <b>the most recommended way</b> to schedule jobs in <b>RedHat 9</b> distribution.
+        </li>
+        <li>
+            A Systemd timer is <b>always used alongside a service unit file</b>. The timer decides <b>WHEN</b> the service
+            should be started and the service unit decides <b>HOW</b> to start the service.
+        </li>
+        <li>
+            If you need a service to be started by a timer, you <b>enable the timer</b>, <b>NOT</b> the service.
+        </li>
+    </ul>
+</section>
+<section>
+    <header>
+        <h3>Scheduling jobs using cron </h3>
+    </header>
+    <p>
+        Here are some interesting ideas:
+    </p>
+    <ul>
+        <li>
+            You can still schedule jobs in RedHat 9, using cron.
+        </li>
+        <li>
+            The crond daemon is started as a systemd service. The crond looks every minute to see if it is work to do.
+            I mean, it checks the cron configuration in order to start the right service at the right time.
+        </li>
+        <li>
+            It does not need to be restarted or reloaded. The crond daemon wakes up every minute and checks its config
+            to see if there is something to do.
+        </li>
+    </ul>
 </section>
 
+<section>
+    <header>
+        <h3>Scheduling jobs using at </h3>
+    </header>
+    <p>
+        Here are some interesting ideas:
+    </p>
+    <ul>
+        <li>
+            Even if you are using cron to schedule jobs, you can also use the at, to be more precise, the atd daemon to
+            schedule jobs that will be executed only once.
+        </li>
+        <li>
+            To schedule a job with this utility, just type at command followed by the time when it must be executed.
+            One example can be: at 15:00. After you pressed enter, the at shell will open and you can type down your
+            commands. In the end, press Ctrl+D to quit.
+        </li>
+        <li>
+            To see all the jobs scheduled with atd, you can type atq. To remove jobs, use the atrm, followed by the
+            number of the job you want to remove.
+        </li>
+    </ul>
+</section>
 
 {% endblock %}

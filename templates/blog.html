@@ -13,8 +13,68 @@
 <li><a href="{{ url_for('projects') }}">Projects</a></li>
 {% endblock %}
 
-{% block content_title %}This is me{% endblock %}
 
+
+{% block content %}
+
+<div class="col-8 col-12-medium imp-medium">
+
+    <!-- Content -->
+    <article class="box post">
+        <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+        <header>
+            <h2>{% block content_title %}This is me{% endblock %}</h2>
+            <br />
+            <h5>Date: November 28, 2025</h5>
+            <br />
+            <h3>About this page</h3>
+
+        </header>
+        <p>
+            This is <b>the landing page</b> of my personal blog &#128587;. <b>To be frank</b>, I am not sure how this
+            blog is going to look like one year from now. I am planning to write down posts regarding <b>things I
+            learn</b> from time to time, some <b>thoughts</b>, reviews of some <b>places I've been to</b> and also
+            insights of <b> the projects that I am working on</b>.
+        </p>
+        <p>
+            <b>When I think of this blog</b> and how I want it to look like a year from now, I like to think that it
+            will gather around <b>a community of people</b> that share <b>same interests as mine</b>, people with whom
+            I would like to <b>get in touch</b> and share ideas and thoughts. I am <b>eager to see how the future will
+            look like</b> for this project.
+        </p>
+        <section>
+            <header>
+                <h3>Something else</h3>
+            </header>
+            <p>
+                The <b>most recent</b> blog posts can be accessed through the left menu, called <b>"Recent blogs"</b>.
+                There will be displayed <b>the latest 4 posts</b> of this blog. I will create in the future <b>a way to
+                access</b> all the blogs, like a separate page, or maybe I will add here some section with links that
+                <b>will contain all the blog posts</b>. We'll see about that later =)))).
+            </p>
+            <p>
+
+            </p>
+        </section>
+        <section>
+            <header>
+                <h3>In conclusion ...</h3>
+            </header>
+            <p>
+                <b>I hope</b> that I will not bore you to death, and <b>maybe you will like something</b> that I will
+                share here. <b>If you want to get in touch</b>, just ping me through one of the ways displayed in the
+                <b>"Contacts"</b> section contained by the footer of each page of this website.
+            </p>
+            <p>
+                <b>In the end</b>, I would like to wish you <b>have a nice day</b> and a really <b>enjoyable reading
+                </b>. Cheers! &#129346;
+            </p>
+        </section>
+    </article>
+
+</div>
+
+{% endblock %}
 
 {% block block1%}
 <section class="box">
@@ -40,7 +100,8 @@
     </header>
     <p>{% block block2_menu_description %}Here are some of the newest blogs on this page{% endblock %}</p>
         <ul class="divided">
-            <li>{% block block2_item1 %}<a href="{{ url_for('day_1') }}">Day #1</a>{% endblock %}</li>
+            <li>{% block block2_item1 %}<a href="{{ url_for('day_1') }}">Day #1 - Scheduling jobs in the Red Hat 9
+                environment</a>{% endblock %}</li>
             <li>{% block block2_item2 %}<a href="#">Day #2</a>{% endblock %}</li>
             <li>{% block block2_item3 %}<a href="#">Day #3</a>{% endblock %}</li>
             <li>{% block block2_item4 %}<a href="#">Day #4</a>{% endblock %}</li>
