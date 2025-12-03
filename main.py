@@ -30,6 +30,10 @@ def blog():
 def day_1():
     return render_template("day_1.html")
 
+@app.route("/blog/day_2")
+def day_2():
+    return render_template("day_2.html")
+
 @app.route("/blog/greetings")
 def greetings():
     return render_template("greetings.html")
