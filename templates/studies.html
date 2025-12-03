@@ -13,4 +13,65 @@
 <li><a href="{{ url_for('projects') }}">Projects</a></li>
 {% endblock %}
 
-{% block content_title %}My development{% endblock %}
+{% block content %}
+
+<div class="col-8 col-12-medium imp-medium">
+
+    <!-- Content -->
+    <article class="box post">
+        <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+        <header>
+            <h3>
+                Bachelor's Degree at "The Faculty of Automatic Control and Computer Science - Polytechnic University
+                of Bucharest"
+            </h3>
+<!--            <br />-->
+            <h4>
+                Period of time: 2020 - 2024
+            </h4>
+            <h5>
+                Grade: 9.25 / 10
+            </h5>
+
+        </header>
+
+<!--        <section>-->
+<!--            <header>-->
+<!--                <h3>Something else</h3>-->
+<!--            </header>-->
+<!--            <p>-->
+<!--            </p>-->
+<!--            <p>-->
+
+<!--            </p>-->
+<!--        </section>-->
+    </article>
+    <article class="box post">
+        <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+        <header>
+            <h3>
+                Ansible for the Absolute Beginner - Hands-On - DevOps
+            </h3>
+<!--            <br />-->
+            <h4>
+                Finished: June 23, 2025
+            </h4>
+
+        </header>
+        <section>
+
+            <p>
+                <b>Download Link:</b>
+                <a href = " {{ url_for('static', filename='files/Certificate_of_Completion_Ansible_for_the_Absolute_Beginner_Hands_On_DevOps_Draghici_Andrei.pdf') }}"
+                   download = "Certificate_of_Completion_Ansible_for_the_Absolute_Beginner_Hands_On_DevOps_Draghici_Andrei.pdf">
+                    Certificate of completion
+                </a>
+            </p>
+            <p>
+
+            </p>
+        </section>
+    </article>
+</div>
+
+{% endblock %}

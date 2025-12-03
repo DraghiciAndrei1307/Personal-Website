@@ -13,9 +13,65 @@
 <li class="current"><a href="{{ url_for('projects') }}">Projects</a></li>
 {% endblock %}
 
-{% block content_title %}My Portofolio{% endblock %}
 
 
+{% block content %}
+
+<div class="col-8 col-12-medium imp-medium">
+
+    <!-- Content -->
+    <article class="box post">
+        <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+        <header>
+            <h2>Personal Website</h2>
+            <br />
+            <h3>About this project</h3>
+
+        </header>
+        <p>
+            Developing a full-stack web application that aims to be a portofolio/blog web application. Technologies
+            used are: Python Flask, Jinja2 templating, HTML, CSS, JavaScript and many more.
+        </p>
+        <p>
+            <b>UPDATE (November 28, 2025):</b> Project will be hosted on a dedicated home server which will run RedHat
+            9 Linux as the designated operating system. Creating the server is still a work-in-progress as I am trying
+            to gather as much knowledge so that I can ensure the server's security.
+        </p>
+        <p>
+            <b>GitHub repository link:</b>
+            <a href = "https://github.com/DraghiciAndrei1307/Personal-Website">
+                Personal Website
+            </a>
+        </p>
+    </article>
+    <article class="box post">
+        <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+        <header>
+            <h2>PostgreSQL Ansible Automation</h2>
+            <br />
+            <h3>About this project</h3>
+
+        </header>
+        <p>
+            Developing an automated PostgreSQL administration project using Ansible to streamline cluster
+            installation, backup management with pgBackRest, and various restore operations (PITR,
+            delta, specific database restores) on RedHat VMs.
+        </p>
+        <p>
+            Extending Ansible capabilities with custom Python modules to further automate database or-
+            chestration and enhance operational efficiency.
+        </p>
+        <p>
+            <b>GitHub repository link:</b>
+            <a href = "https://github.com/DraghiciAndrei1307/PostgreSQL-Ansible-Automation">
+                PostgreSQL Ansible Automation
+            </a>
+        </p>
+
+    </article>
+</div>
+
+{% endblock %}
 
 {% block block1%}
 <section class="box">

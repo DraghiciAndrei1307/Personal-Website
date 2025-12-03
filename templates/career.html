@@ -13,4 +13,55 @@
 <li><a href="{{ url_for('projects') }}">Projects</a></li>
 {% endblock %}
 
-{% block content_title %}Professional milestones{% endblock %}
+{% block content %}
+
+<div class="col-8 col-12-medium imp-medium">
+
+    <!-- Content -->
+    <article class="box post">
+        <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+        <header>
+            <h3>Schwarz Global Services</h3>
+            <h4>PostgreSQL DBA</h4>
+            <h5>July 1, 2023 - Present</h5>
+        </header>
+        <p>
+            <ul>
+                <li>
+                    Developed the <b>User Audit</b> project to <b>extract and centralize</b> audit data from
+                    <b>multiple PostgreSQL databases</b>> for specific users, enabling <b>easy visualization</b> and
+                    <b>analysis in Grafana</b> on a dedicated <b>StackIT VM</b>.
+                </li>
+                <li>
+                    Developed the <b>Oracle Tablespace Usage Prediction</b> project to aggregate <b>historical data</b>
+                    from <b>Oracle databases</b> and <b>send prompts via API</b> to an AI system that analyzes them,
+                    <b>triggering email notifications</b> to the <b>DBA team</b> if <b>thresholds are exceeded</b>.
+                </li>
+                <li>
+                    Migrated multiple <b>production databases</b> using <b>custom Ansible playbooks</b> executed through
+                    <b>AWX</b>, ensuring <b>reliable</b>, <b>automated</b>, and <b>consistent</b> deployments.
+                </li>
+                <li>
+                    Regularly <b>patched</b> and <b>maintained PostgreSQL databases</b> using <b>orchestration tools</b>
+                    such as <b>AWX</b>, improving <b>security</b> and <b>operational stability</b>.
+                </li>
+            </ul>
+        </p>
+        <p>
+
+        </p>
+<!--        <section>-->
+<!--            <header>-->
+<!--                <h3>Something else</h3>-->
+<!--            </header>-->
+<!--            <p>-->
+<!--            </p>-->
+<!--            <p>-->
+
+<!--            </p>-->
+<!--        </section>-->
+    </article>
+
+</div>
+
+{% endblock %}
