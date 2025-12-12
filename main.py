@@ -26,13 +26,21 @@ def career():
 def blog():
     return render_template("blog.html")
 
-@app.route("/blog/day_1")
-def day_1():
-    return render_template("day_1.html")
+@app.route("/blog/<day>")
+def day_blog(day: str):
+    return render_template(f"{day}.html")
 
-@app.route("/blog/day_2")
-def day_2():
-    return render_template("day_2.html")
+# @app.route("/blog/day_1")
+# def day_1():
+#     return render_template("day_1.html")
+#
+# @app.route("/blog/day_2")
+# def day_2():
+#     return render_template("day_2.html")
+
+# @app.route("/blog/day_3")
+# def day_3():
+#     return render_template("day_3.html")
 
 @app.route("/blog/greetings")
 def greetings():

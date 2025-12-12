@@ -1,0 +1,129 @@
+{% extends "no-sidebar.html" %}
+
+
+{% block title %}Day #4{% endblock %}
+
+{% block logo %}Day #4{% endblock %}
+
+{% block content_title %}The Rabbit Hole is Even Deeper Than I Thought{% endblock %}
+{% block content_date %}Date: December 12, 2025{% endblock %}
+
+
+{%block content%}
+
+<p>
+    Some days ago I mentioned that I really want this web application to be up and running. The thing is, as mentioned
+    before, that we have to ensure security on 3 levels: application, server and network. For the first two, I guess I have
+    the roadmap configured so that one day I will be able to secure the web application and provide high-level of
+    hardening for the server. But the last item, the network, is something that is totally out of my control at the
+    moment.
+</p>
+
+<p>
+    I did a little bit of research though. I learned that in order to secure my network I have to perform some basic
+    steps in order to perform minimal security. Among this steps are:
+    <ul>
+        <li>
+            Create a strong password for accessing the router configurations.
+        </li>
+        <li>
+            Configure a strong Wi-Fi password.
+        </li>
+        <li>
+            Deactivate the WPS option so that the access to be performed only password-based and not with the PIN,
+            which can be discovered by an attacker within a few hours.
+        </li>
+        <li>
+            Set your Wi-Fi Protected Access (WPA) to WPA2/WPA3 standard. WPA is a standard used for ensuring your Wi-Fi
+            security. It protects the connection between your router and the other devices. Its purpose is to encrypt
+            the data so that no one outside your network can be able to read it.
+        </li>
+        <li>
+            Also, you have to divide your network into multiple VLANs so that devices from the IoT group cannot
+            communicate with the server or the personal laptop.
+        </li>
+        <li>
+            Activate the guest network, which is separated from the main network. The guest network must have a
+            different password from the main network. If the guest network is compromised, the main network might have
+            a chance to be ok...
+        </li>
+        <li>
+            Create a VPN server or use the router as a VPN server so that if an attacker scans the network, he will not
+            be able to detect the web server.
+        </li>
+    </ul>
+</p>
+
+<p>
+    The last 2 points are the main problem that makes me feel like I am fighting a colossus. I came to the conclusion
+    that before I release my web application, I have to configure my network so that I will not expose every device I
+    have over the Internet.
+</p>
+
+<p>
+    While doing my research I found that on my TP_Link I have the OpenVPN option and I can use the router as a VPN
+    server. The problem is that I cannot use this option until I get a public IP address from the ISP (Internet Service
+    Provider). My router is, at the moment, under CGNAT, which means that I have a private IP address and not a public
+    one. This thing is relatively easy to resolve. I just have to call the ISP provider and request a public IP address
+    (which is a standard request and shouldn't be charged any money).
+</p>
+
+<p>
+    Another thing that I have to deal with is that until today I used the ZTE device provided by the ISP which is kind
+    of limited in functionality. I cannot set VLANs or a VPN server on this router. No problem, I will move to the
+    TP_Link, I thought to myself, because this router can help me create VLANs and a VPN server. But, the TP_Link does
+    not have a public IP address. I found 3 solutions to this problem:
+    <ol>
+        <li>
+            The first solution would be to call the ISP and request that the ZTE to be put to Bridge mode and also
+            provide a public IP address. This solution is a good one, but for me is not optimal because I do not have
+            the knowledge to perform hardening at router level at the moment. I can call the ISP and do the things above
+            , but I think that this will expose my network. I simply do not have the knowledge to secure it at the
+            moment.
+        </li>
+        <li>
+            The second solution would be to keep the ZTE on NAT and to set the Port Forwarding on ZTE to redirect the
+            packages to the TP_Link. On TP_Link again I have to set the Port Forwarding (so double port forwarding) to
+            send the packages to VPN server. I found that this solution is not optimal as it will generate lag on the
+            network.
+        </li>
+        <li>
+            The last option would be to use the Tailscale solution which does not require public IP or change the router
+            to Bridge or use Port Forwarding. It is like creating a "private virtual network" in cloud. You just install
+            it on your devices and the Tailscale will do all the work. This is the easiest solution and I think I will
+            use this in the beginning, until I learn more about networking.
+        </li>
+    </ol>
+
+</p>
+
+<p>
+    I think this is all for the moment from me. I will keep learning about RedHat 9 so that I will finish to acquire
+    all the basic knowledge so that I can start learn about some basic hardening. After I finish with the "basic
+    hardening" part I will configure the network with Tailscale or similar solution and in the end I will set this
+    application up on the Internet.
+</p>
+
+<p>
+    I wish you a very nice day! 🤙
+</p>
+
+<!--<p>-->
+<!--    Coming back to the present moment...Now I find myself in a Starbucks coffee shop. Me and my girlfriend are trying-->
+<!--    to learn as she has an exam tomorrow morning and I just want to learn new things. The thing that I learned about-->
+<!--    and I found interesting was the fact that the inflation affects the stocks in a slightly interesting way. I found-->
+<!--    out that when the inflation has extremely low values, the stocks do very poorly. When the inflation has "normal-->
+<!--    values", something like 5-6%, the stocks do very well, and when the inflation exceeds levels like 10%, then the-->
+<!--    stocks do very bad, again.-->
+<!--</p>-->
+
+<!--<p>-->
+<!--    I took this screenshot from the Intelligent Investor book. This images shows exactly what I described above, but in-->
+<!--    a more detailed and facts-driven way.-->
+<!--</p>-->
+
+<!--<img src="{{ url_for('static', filename='images/day_3/stocks_vs_inflation.png') }}" alt="Stocks vs Inflation"-->
+<!--         style="  display: block; margin-left: auto;margin-right: auto; width: 50%;">-->
+
+
+{% endblock %}

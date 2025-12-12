@@ -100,11 +100,26 @@
     </header>
     <p>{% block block2_menu_description %}Here are some of the newest blogs on this page{% endblock %}</p>
         <ul class="divided">
-            <li>{% block block2_item1 %}<a href="{{ url_for('day_1') }}">Day #1 - Scheduling jobs in the Red Hat 9
-                environment</a>{% endblock %}</li>
-            <li>{% block block2_item2 %}<a href="{{ url_for('day_2') }}">Day #2 - A new approach, I guess</a>{% endblock %}</li>
-            <li>{% block block2_item3 %}<a href="#">Day #3</a>{% endblock %}</li>
-            <li>{% block block2_item4 %}<a href="#">Day #4</a>{% endblock %}</li>
+            <li>
+                {% block block2_item1 %}
+                <a href="{{ url_for('day_blog', day = 'day_1') }}">Day #1 - Scheduling jobs in the Red Hat 9 environment</a>
+                {% endblock %}
+            </li>
+            <li>
+                {% block block2_item2 %}
+                <a href="{{ url_for('day_blog', day = 'day_2') }}">Day #2 - A new approach, I guess</a>
+                {% endblock %}
+            </li>
+            <li>
+                {% block block2_item3 %}
+                <a href="{{ url_for('day_blog', day = 'day_3') }}">Day #3 - Coffee, Learning and Good Vibes Only</a>
+                {% endblock %}
+            </li>
+            <li>
+                {% block block2_item4 %}
+                <a href="#">Day #4 - The Rabbit Hole is Even Deeper Than I Thought</a>
+                {% endblock %}
+            </li>
         </ul>
 </section>
 {%endblock%}
