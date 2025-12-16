@@ -1,0 +1,64 @@
+{% extends "no-sidebar.html" %}
+
+
+{% block title %}Day #5{% endblock %}
+
+{% block logo %}Day #5{% endblock %}
+
+{% block content_title %}New Achievements and Resolutions{% endblock %}
+{% block content_date %}Date: December 16, 2025{% endblock %}
+
+
+{%block content%}
+
+<p>
+    Last night was a great one, and I will tell you why I am making this affirmation. Some time ago, to be more precise,
+    six months ago I purchased a Beelink (a mini-PC) with the purpose of creating myself a home server where I can
+    create virtual machines and containers in order to set some projects up and running, including this project, the
+    personal website, that I am currently working on. Last night I had the presence of spirit to setup a VM where I
+    cloned this project and runned the flask application on the designated private IP (192.168.xxx.xxx) and the 5000
+    port which I opened using the <b>sudo firewall-cmd --permanent --add-port=5000/tcp</b> command. Even though it is
+    not a great thing for others, for me is a great achievement. I opened the port on my "home server" and set the web
+    application up and running in order to be accessed by every device on the local network.
+</p>
+
+<p>
+    Yes, I know that I am still gaining the knowledge in terms of hardening RedHat systems, I am currently at chapter
+    14, where I am learning about Storage management (disks, different types of partitions, file systems and how to
+    manage them and their properties etc.) which is a great chapter to be honest. I learned things that before I
+    thought were Chinese XD.
+</p>
+
+<p>
+    The title of this blog post contains the word "Resolutions". I have two things that came to my mind these days. The
+    first thing is to do some revision on the already learned chapters from the Redhat book, and second, to fill the
+    knowledge gaps of my Git and GitHub related subjects.
+</p>
+
+<p>
+    For the first resolution, my approach is to create a project that aims to perform certain-selected tasks from the
+    book, or entire exercises and perform them using Ansible. The thing is that this is the best way I am thinking about
+    to "kill two birds with one stone". I can recap two subjects at the same time: RedHat Linux Management and Ansible
+    automation. For this, I created the following repository: <b>link_to_be_added</b>. Have a look over there in order
+    to check my progress if you are curious.
+</p>
+
+<p>
+
+    For the second resolution now. This idea came to my mind today when I thought that if I want to have a nice
+    looking portofolio, a project-portofolio that is well-structured and organised, I really need to learn Git and
+    GitHub. I already have some experience regarding these subjects, but at the same time I really feel like I need to
+    evolve, to improve my skills. There is this one phrase that <b>Matthew McConaughey</b> (the actor who played in the
+    Interstellar movie) once said: <b>"Don't half-ass it."</b>. In this case, this journey that I started, of creating
+    my own server, secure it and public my web application over the Internet, this is the main goal that I want to
+    achieve. I really want to succeed and do not half-ass it. This is my goal. To set my web application up and running
+    over the Internet and apply the best set of practices in order to secure it.
+
+</p>
+
+<p>
+    This is all from me today. I hope that the things said here are of interest and I wish you have a nice day,
+    full of joy and achievements! 🤙
+</p>
+
+{% endblock %}
