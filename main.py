@@ -28,7 +28,7 @@ def blog():
 
 @app.route("/blog/<day>")
 def day_blog(day: str):
-    return render_template(f"{day}.html")
+    return render_template(f"blog_posts/{day}.html")
 
 # @app.route("/blog/day_1")
 # def day_1():
