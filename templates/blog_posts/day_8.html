@@ -1,0 +1,58 @@
+{% extends "no-sidebar.html" %}
+
+
+{% block title %}Day #8{% endblock %}
+
+{% block logo %}Day #8{% endblock %}
+
+{% block content_title %}New waves of motivation{% endblock %}
+{% block content_date %}Date: December 21, 2025{% endblock %}
+
+
+{%block content%}
+
+<p>
+    Today I feel pretty motivated to learn new things. To be honest, in the first part of the day I wasn't motivated to
+    learn nothing related to RedHat nor working on this project. I was motivated to just start a project I was thinking
+    for some time. That project is a trading app that collects data from the BVB.ro and stores it inside a PostgreSQL
+    database. Until now I was able to just extract the statistic data from one of the companies I am interested into
+    and store that data inside a CSV file. I was able to extract all that data using Selenium which I think is a
+    powerful tool for web scraping and web page manipulation. Another thing that I wanted to do was to download the
+    reports published by that company and find a was to scrape the PDF documents in order to extract more data for my
+    algorithm. But here is where I got stuck. I couldn't do that thing and I do not want to get to ChatGPT or other AI
+    to give me the solution on a plate. No no, I want to do this the hard way. So I found this book called:
+    "Python Web Scraping Cookbook" by Lazar Telebak, Michael Heydt, Mei Lu which I find very interesting even though I
+    am at the chapter 2.
+</p>
+
+<p>
+    Until now I just learned to get access to the DOM of the webpage using requests, urllib3 and selenium and
+    beautifulsoup4 to parse through the html contents of the page. But the book has more to show us. It also has some
+    chapters related to storing the data inside databases like MySQL and PostgreSQL, which I find extremely useful.
+    Another thing that I am eager to get to is the chapter where the authors teach us to create a REST API with
+    Flask_RESTful. Basically to create an interface to access the scraped data. With this, I will be able to create
+    new amazing and more complex things.
+</p>
+
+<p>
+    Even though it seems that I started a lot of projects at the same time, it is not quite that thing. All of these
+    projects: learning RedHat to configure my server, web dev, automation, database administration (basically what I do
+    at work) and web scraping are subjects that are interconnected. Let me just explain. The RedHat will be very useful
+    to create the environment for my web applications. The database administration helps me to create a way to store my
+    data in a professional and consistent manner (data which I will scrape from the Internet). Automation with Ansible
+    is extremely useful for getting thing done faster on multiple hosts at once. And the web applications and the web
+    scraping apps are the icing on the cake, the things that use all of this infrastructure.
+</p>
+
+<p>
+    I am extremely happy that I finally found a way to keep my motivation up. When I do not have the mood for learning
+    RedHat, I can simply work on this web application or learn about webscraping or write some ansible playbooks. This
+    approach, I guess, will reduce the boredom and will keep me involved in the process of doing.
+</p>
+
+<p>
+    I hope you also feel motivated as I feel now. Have a nice day!
+</p>
+
+
+{% endblock %}
