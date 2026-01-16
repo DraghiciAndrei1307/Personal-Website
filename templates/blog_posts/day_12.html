@@ -1,0 +1,116 @@
+{% extends "no-sidebar.html" %}
+
+
+{% block title %}Day #12{% endblock %}
+
+{% block logo %}Day #12{% endblock %}
+
+{% block content_title %}Another day of feeling tired{% endblock %}
+{% block content_date %}Date: January 20, 2026{% endblock %}
+
+
+{%block content%}
+
+<h3>Introduction</h3>
+<br>
+
+
+<p>
+    Hello! Today I feel like I want to talk about the technical achievements of yesterday. I simply do not have the
+    energy to work on any project today. This day is about resting and planning the next steps. I found out lately that
+    resting is also a productive thing. A rested and clear mind can be so much more productive than a tired and
+    frustrated one. The "less is more" thing is something that I am still trying to adopt into my personal philosophy,
+    even though I am more of a "let's hustle" person. I really need to learn how to take it easy =))))
+</p>
+
+<p>
+    As you can remember from the last posts, I managed to extract data from BVB official website, using a
+    selenium-based webscraper and store all that data inside a PostgreSQL database, on my home server. For me, this
+    milestone means a lot. This is the first thing I create that resembles with a real fullstack application, even
+    though is at this small scale. Yesterday, I thought that it would be a great addition to SELECT all that data from
+    the PostgreSQL table and display it, using a web application. This, I think is a great idea, because I already have
+    some experience (this blog) in creating web applications, using Flask. To create a web app that displays, in a
+    table format, the data I stored inside my database was an easy thing.
+</p>
+<p>
+    The first thing I did was to use the psycopg2 Python module to connect to the PostgreSQL database, define a
+    cursor and execute a SELECT statement. The most important line of this process is the following:
+</p>
+<p>
+    <b>cur.execute( "SELECT * FROM public.bvb_data WHERE UPPER(symbol) = UPPER(%s)", (symbol,) )</b>
+</p>
+
+<p>
+    This line, uses a cursor, named "cur" in order to execute the <b>SELECT</b> statement contained by paratheses.
+</p>
+
+<p>
+    After I managed to perform that <b>SELECT</b>, I fetched all that data and saved it inside <b>a list of tuples</b>
+    using: <b>rows = cur.fetchall()</b>
+</p>
+
+<p>
+    With this list, it was extremely easy to display that data. I simply sent this list, as input parameter, to the
+    <b>rendered HTML file</b> and displayed that data inside a table. The front-end was created using Bootstrap
+    framework. I know, I was pretty lazy, but the frontend is not my thing. The outcome of yesterday's work can be
+    observed in the following screenshot.
+</p>
+
+<br>
+
+<img src="{{ url_for('static', filename='images/day_12/result.jpeg') }}" alt="cake image 2"
+        style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+
+<br>
+
+<p>
+    Because I mentioned that today is also about planning the next steps, I am thinking that the next steps must be
+    about solidifying the base structure of this web app. What I mean by that is that I am planning to go further with
+    the study of the Linux RedHat book and learn new things that I can apply onto my server. The development of the
+    "Trading App" will be paused for the moment because I really need to study more about smart investing from the
+    Intelligent Investor book (so that I can create a way to use all of that data that I am scraping). Also, I want to
+    learn how to harden the server the right way.
+</p>
+
+<p>
+    So, tomorrow, I will finish the chapter 16 of the Linux RedHat book. It is a pretty interesting chapter. So far,
+    I learned about how to check the kernel activity and different info (like the kernel version), using dmesg, /proc
+    or uname utilities. Another interesting thing that I learned here is the 'tainted kernel'. A 'tainted kernel' is a
+    kernel that works with closed source drivers. Closed source drivers are drivers that do not have the source code
+    made public by the hardware vendor.
+</p>
+
+<p>
+    There are 2 types of drivers: open source and closed source drivers. The open source drivers have the code published
+    on the Internet, by the vendor of the hardware you are using. If problems related to the open source drivers appear,
+    the community can inspect the source code of the drivers and come up with a bug fix which will be solved during the
+    next patch.
+</p>
+
+<p>
+    The closed source drivers do not have the source code published. The drivers are distributed in a binary format. If
+    problems occur, coming up with a solution will be an extremely hard thing as you do not have access to the source
+    code. This is why I think, Linus Torvalds "appreciates" NVIDIA XD (link: https://www.youtube.com/watch?v=iYWzMvlj2RQ),
+    because they do not publish the drivers source code for their chips. They distribute it directly compiled.
+</p>
+
+<p>
+    Even though it is hard so solve this kind of problems, a solution exists. The 'tainted kernel' thing I mentioned
+    above is the solution. In case of a tainted kernel (a kernel which uses closed source drivers), if a driver causes
+    problems, the kernel will suggest you to remove it in order to solve that problem. Pretty easy, right? =)))))
+</p>
+
+<p>
+    I think that the domain of operating systems is a thing that arouses my interest. It is basically the foundation of
+    every software that we are using today. Without it, our online lives wouldn't be possible today. This is the thing
+    that drives me to learn about how to configure and harden my sever. This is the first structural brick that I will
+    use in order to set my applications up and running.
+</p>
+
+<p>
+    I do not know what else I can talk about here, so I will simply finish this post by saying that I wish all of you a
+    good and productive day. Cheers!
+</p>
+
+
+{% endblock %}
