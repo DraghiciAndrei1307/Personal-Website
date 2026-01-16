@@ -1,0 +1,153 @@
+{% extends "no-sidebar.html" %}
+
+
+{% block title %}Day #10{% endblock %}
+
+{% block logo %}Day #10{% endblock %}
+
+{% block content_title %}I feel tired, but proud of myself{% endblock %}
+{% block content_date %}Date: January 16, 2026{% endblock %}
+
+
+{%block content%}
+
+<h3>Introduction</h3>
+<br>
+
+
+<p>
+    Hello! I hope you are having a marvelous day! Today, I am feeling a bit tired...I do not know why, but I feel like
+    I am not in the mood of doing anything. I feel like I just want to binge-watch something on Netflix and eat a lot
+    of fast-food and drink soda...Unfortunately, my conscience won't allow me to lose any time. I have a lot of work to
+    do and a lot of things that I want to achieve, even though my body is tired.
+</p>
+<p>
+    The past few days were pretty good. I have completed a lot of tasks, created documentation for work, joined meetings
+    and performed a lot of home-related tasks like cleaning, meal-prepping and so on and so forth. If I have to choose 2
+    of the achievements that I am the most proud of I would choose the following two milestones:
+</p>
+
+<ul>
+    <li>
+        I cooked an amazing and delicious dish. I tried the recipe of <b>@nicolasaesthetics</b> from this YouTube video:
+        <a href = "https://www.youtube.com/watch?v=mfU4PlIcjuw&t=565s">
+            https://www.youtube.com/watch?v=mfU4PlIcjuw&t=565s
+        </a>
+    </li>
+    <li>
+        I started to apply all the things that I am trying to learn inside a more complex project. Basically,
+        I managed to create a Python webscraper (I use Selenium here) in order to extract statistical data out the
+        https://www.bvb.ro/ website. This data is stored inside a table of a PostgreSQL database (I used psycopg2 Python
+        module to insert the data inside the database).
+    </li>
+</ul>
+
+<h3>The culinary achievement</h3>
+<br>
+
+<p>
+    Let us talk first about the culinary achievement. I cannot really remember now how the cake is called, but it is
+    basically like a proteic cake. The recipe is pretty easy to execute. You just have mix 90 mg of oats with 3 mg of
+    baking powder until they transform in something similar to flour. After that, add 6 egs and some salt and mix again.
+    This mixture will be used to create the cake. In order to do that, you have to slice some apples and put them
+    into the tray, following this pattern: one layer of apple slices followed by a layer of mixture. Follow this pattern
+    until you finish both the mixture and the apple slices.
+</p>
+
+<p>
+    The next thing I did was to put this tray inside the pre-heated oven at 180 degrees Celsius and leave it there like
+    an hour or so. In the end, after the cake cooled down, I added some berries and poured a special sauce (obtained by
+    mixing 400 mg of proteic vanilla pudding with 250 ml of milk) over the cake. The result of this experience are
+    displayed in the following images.
+</p>
+
+<img src="{{ url_for('static', filename='images/day_10/cake_1.jpeg') }}" alt="cake image 1"
+        style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+
+<br>
+
+<img src="{{ url_for('static', filename='images/day_10/cake_2.jpeg') }}" alt="cake image 2"
+        style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+
+<br>
+
+<p>
+    What do you think about the outcome? Consider emailing me at <b>draghici.andrei12@yahoo.com</b> and let me know
+    your of your rating.
+</p>
+
+<h3>The technical achievement</h3>
+<br>
+<p>
+    Moving on to the real deal now. I really need to tell you about this achievement. Everything started with me
+    learning about the storage management of the Linux RedHat 9 OS. This subject had 2 chapters where this topic was
+    discussed. The first chapter (Chapter 14 - Managing Storage) focused on creating partitions (MBR and GPT) using
+    fdisk, gdisk and parted. It was interesting to see how they can be created and configured. The other chapter
+    (Chapter 15 - Managing Advanced Storage) focused on LVMs and how you can create and configure them. This chapter
+    was way more interesting to me because I had the chance to learn about how can I create a Physical Volume using
+    disks or partitions (which I learned how to create and configure in chapter 14). Another thing that I learned here
+    was to create a Volume Group out of those Physical Volumes and then create Logical Volumes (LVMs) using the Volume
+    Group. What is interesting about Logical Volumes is that their size is flexible. When a logical volume fills up,
+    you can easily add more space from the volume group it is part of. No enough space on the volume group to extend
+    the logical volume? Add a new physical volume. No more physical volumes? Add more disks/partitions. This is the
+    thing that I like the most about this storage management approach. Another thing that I like here is that you have
+    the chance to enforce some additional security good practices in order to secure partitions using the /etc/fstab
+    file.
+</p>
+
+<p>
+    I know, I know, this was a big introduction, but the sweet thing comes now. After learning all these things about
+    storage management, I really felt like I need to apply this knowledge somewhere. So, I started to think that I need
+    some data, some interesting data, to put inside those LVMs. "What interests me at the moment?" I thought to
+    myself. "Well, I really like to learn about investing, even though I am a beginner". So, I started to think that I
+    want to have a tool (an application) that tells me what should I invest in. In order to know what should I invest
+    in (what stocks are worth investing into), I need data. To get the data, I need a source and a way how to extract
+    the data from the source. This was the process that make me create an application that has the following components:
+    a webscraper (the way I collect data) and a database (where I store the data).
+</p>
+
+<p>
+    For now, the application is simplistic. I just connect to the bvb.ro and collect some statistical data of some
+    stocks I like, using Selenium. After that, I save that data in a python dictionary, I create the insert statement
+    and I populate a table inside the PostgreSQL database with the data collected, using the psycopg2 module. This is
+    the way I store the data inside my PostgreSQL. You may ask now: "But, Andrei, how is all of this related with the
+    storage management part?". Well, when I configured the PostgreSQL database, I made sure that each of the WAL files,
+    the logs and the data folder of the PostgreSQL database are stored inside separate LVMs which are mounted on
+    specific locations:
+
+</p>
+
+<ul>
+    <li>
+        The pg_wal is stored inside the /mnt/pg_wal which is the folder where I mounted and ext4 file system LVM.
+        This lvm will contain only the WAL files.
+    </li>
+    <li>
+        The pg_data is stored inside the /mnt/pg_data which is the folder where I mounted the ext4 file system LVM. Here
+        I save the data folder of the PostgreSQL database.
+    </li>
+    <li>
+        The logs of the PostgreSQL database are stored inside the /mnt/pg_logs folder. This is where I mounted another
+        ext4 file system. In this LVM I keep all the logs related to the PostgreSQL database.
+    </li>
+</ul>
+
+<p>
+    I know that these components of the PostgreSQL database should be kept on different storage environments, as a good
+    practice, and this is basically what I tried to do here.
+</p>
+
+<p>
+    At the moment, I set up a cron job that uses this project to populate the database every 2 minutes so that I can
+    observe how the usage of the lvms increases. Everything works, but the usage barely increases. I need to collect and
+    store more data inside my database. After this, I will move on to other chapters so that I can better understand and
+    manage my future server.
+</p>
+
+<p>
+    I think this is all for today. I hope the things presented here stirred interest and I hope you will have a great
+    rest of the day! See you!
+</p>
+
+
+{% endblock %}
