@@ -5,8 +5,8 @@
 
 {% block logo %}Day #12{% endblock %}
 
-{% block content_title %}Another day of feeling tired{% endblock %}
-{% block content_date %}Date: January 20, 2026{% endblock %}
+{% block content_title %}Cognitive Fatigue{% endblock %}
+{% block content_date %}Date: January 25, 2026{% endblock %}
 
 
 {%block content%}
@@ -16,101 +16,110 @@
 
 
 <p>
-    Hello! Today I feel like I want to talk about the technical achievements of yesterday. I simply do not have the
-    energy to work on any project today. This day is about resting and planning the next steps. I found out lately that
-    resting is also a productive thing. A rested and clear mind can be so much more productive than a tired and
-    frustrated one. The "less is more" thing is something that I am still trying to adopt into my personal philosophy,
-    even though I am more of a "let's hustle" person. I really need to learn how to take it easy =))))
+    Hello! This day (January 25, 2026) finds me again in a coffee shop (a Starbucks coffee shop this time) trying to
+    learn something that is quite important for me at me moment (I 'll get to this later). This last week, my direct
+    manager decided that it would be a good idea to get me involved in a project that aims to create a Django API that
+    stands as a layer between the applications the firm uses and the databases stored in our Cloud.
+</p>
+<p> And so, this Friday (January 23, 2026), I met Michael, who is the guy that coordinates this whole solution. He is a
+    nice guy and is a senior software developer from Germany. He said that he and another colleague are working at this
+    solution, and they are in need for some additional help. He also said that they are using Django Rest Framework to
+    develop the API and granted us access to their repository and documentation. Overall, it was a good meeting, with a
+    lot of insights presented, a meet that stirred my interest.
 </p>
 
 <p>
-    As you can remember from the last posts, I managed to extract data from BVB official website, using a
-    selenium-based webscraper and store all that data inside a PostgreSQL database, on my home server. For me, this
-    milestone means a lot. This is the first thing I create that resembles with a real fullstack application, even
-    though is at this small scale. Yesterday, I thought that it would be a great addition to SELECT all that data from
-    the PostgreSQL table and display it, using a web application. This, I think is a great idea, because I already have
-    some experience (this blog) in creating web applications, using Flask. To create a web app that displays, in a
-    table format, the data I stored inside my database was an easy thing.
-</p>
-<p>
-    The first thing I did was to use the psycopg2 Python module to connect to the PostgreSQL database, define a
-    cursor and execute a SELECT statement. The most important line of this process is the following:
-</p>
-<p>
-    <b>cur.execute( "SELECT * FROM public.bvb_data WHERE UPPER(symbol) = UPPER(%s)", (symbol,) )</b>
+    To be honest, I am not a software developer (in the true sense of the word). I am merely a rookie in software
+    development . I mean, I did work at some projects/homeworks related to the uni which involved a bit of Git and
+    GitHub, but never worked in a true software development environment, with specialists like Michael. I know how to
+    init a Git project, to check status (using the <b>git status</b> command), to add the changes, commit them and push
+    them to the GitHub repo. I also know how to work with branches and merge (using a pull request) the work I perform
+    there to the main branch. I also know how to generate SSH keys and add them to GitHub in order to interact with the
+    repo in a more secure way. But, even though I know all of this, I still feel like I have a lot to learn about Git
+    and GitHub in order to feel ready to work in a proffesional environment. I really want to make a good impresion to
+    Michael and prove (to him and myself) that I can work in a clean and structured manner.
 </p>
 
 <p>
-    This line, uses a cursor, named "cur" in order to execute the <b>SELECT</b> statement contained by paratheses.
+    And so, I sketched a plan to prepare myself for working at the API solution that Michael is in charge of. The plan
+    is as follows:
+</p>
+
+<ul>
+    <li>
+        Become proficient in Git and GitHub as fast as possible. For this, I started following a Git and GitHub
+        course from Udemy which aims to get you through all the relevant topics of Git and GitHub, and more
+        (Link: https://www.udemy.com/course/git-and-github-bootcamp/).
+    </li>
+    <li>
+        Follow the Quickstart section of the Django documentation.
+    </li>
+    <li>
+        Create a project that uses the things learned from the Django documentation. I am thinking of two VMs. On one
+        VM, I will run the application which will use the Django Rest API to manipulate the PostgreSQL database
+        from the other VM. For the start, I will perform a few SQL statements (via API calls). I guess it is enough for
+        a starter.
+    </li>
+</ul>
+
+<p>
+    I think that my plan for the next few weeks will be a good proof of concept, if I wrap this up in a clean,
+    structured and well-documented GitHub repository.
 </p>
 
 <p>
-    After I managed to perform that <b>SELECT</b>, I fetched all that data and saved it inside <b>a list of tuples</b>
-    using: <b>rows = cur.fetchall()</b>
+    Until now, I managed to get through 8 sections out of 20. I think I managed to learn and understand the core
+    concepts of Git. The videos are pretty easy to follow and I like that almost each section has some exercises in
+    order to practice the topics discussed. So far, I am pretty satisfied with this course. I learned a lot of things
+    that before I thought I mastered. This course helped me to structure the knowledge I thought I had. I am glad
+    that finally I had the chance to learn this subject the right way. For example, I learned how to solve conflicts
+    between two branches (a thing that before resembled with Chinese to me), how to perform a merge commit
+    (if there were no conflicts) and how to use git diff in order to check the changes between 2 commits, 2 branches
+    and also check what changes were made (staged, unstaged or both) since the last commit of a specific branch.
 </p>
 
 <p>
-    With this list, it was extremely easy to display that data. I simply sent this list, as input parameter, to the
-    <b>rendered HTML file</b> and displayed that data inside a table. The front-end was created using Bootstrap
-    framework. I know, I was pretty lazy, but the frontend is not my thing. The outcome of yesterday's work can be
-    observed in the following screenshot.
+    Now, I am trying to complete in this course, to learn more and more, but I feel just a little bit tired. I guess
+    this is some cognitive fatigue that is the outcome of the last days or weeks of learning and developing daily. I
+    mean, at the moment I have a lot of projects ongoing. These projects are:
 </p>
 
-<br>
+<ul>
+    <li>
+        Reading about the Linux RedHat 9 Operating System - the aim here is to learn to use and manage it in order to
+        create an environment to run my projects
+    </li>
+    <li>
+        RedHat Automation with Ansible - the aim here is to use Ansible to automate different tasks performed on a Linux
+        RedHat environment (with this project, I shoot two birds with one stone: I recap the RedHat knowledge and I
+        practice Ansible)
+    </li>
+    <li>
+        Trading App - this app aims to help me determine if a stock is worth investing my money into. For a long time
+        I desired to create such app. I am reading this book "Intelligent Investor" which helps me understand how to
+        become an intelligent investor, how secure my money and beat the inflation at the same time (which is also a
+        way to secure your assets).
+    </li>
+    <li>
+        Home-related tasks. Cooking, cleaning and fixing stuff takes a lot of time, but I cannot work in an environment
+        that is not clean. I like to have everything in place. Otherwise, I cannot fully concentrate.
+    </li>
+    <li>
+        Work - this is a challenging topic. I have a lot of work to do there. A lot of databases to be managed, systems
+        to be scaled up/debugged and documented.
+    </li>
+</ul>
 
-<img src="{{ url_for('static', filename='images/day_12/result.jpeg') }}" alt="cake image 2"
-        style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
-
-<br>
-
-<p>
-    Because I mentioned that today is also about planning the next steps, I am thinking that the next steps must be
-    about solidifying the base structure of this web app. What I mean by that is that I am planning to go further with
-    the study of the Linux RedHat book and learn new things that I can apply onto my server. The development of the
-    "Trading App" will be paused for the moment because I really need to study more about smart investing from the
-    Intelligent Investor book (so that I can create a way to use all of that data that I am scraping). Also, I want to
-    learn how to harden the server the right way.
-</p>
-
-<p>
-    So, tomorrow, I will finish the chapter 16 of the Linux RedHat book. It is a pretty interesting chapter. So far,
-    I learned about how to check the kernel activity and different info (like the kernel version), using dmesg, /proc
-    or uname utilities. Another interesting thing that I learned here is the 'tainted kernel'. A 'tainted kernel' is a
-    kernel that works with closed source drivers. Closed source drivers are drivers that do not have the source code
-    made public by the hardware vendor.
-</p>
-
-<p>
-    There are 2 types of drivers: open source and closed source drivers. The open source drivers have the code published
-    on the Internet, by the vendor of the hardware you are using. If problems related to the open source drivers appear,
-    the community can inspect the source code of the drivers and come up with a bug fix which will be solved during the
-    next patch.
-</p>
 
 <p>
-    The closed source drivers do not have the source code published. The drivers are distributed in a binary format. If
-    problems occur, coming up with a solution will be an extremely hard thing as you do not have access to the source
-    code. This is why I think, Linus Torvalds "appreciates" NVIDIA XD (link: https://www.youtube.com/watch?v=iYWzMvlj2RQ),
-    because they do not publish the drivers source code for their chips. They distribute it directly compiled.
+    Now that I have showcased news and plans related to my life, I feel prepared to resume my learning process of
+    understanding Git and GitHub. I really feel like creating posts (basically journaling my thoughts) helps me to feel
+    productive. It makes me eager to work on my projects. It simply gives me that boost of motivation that sometimes
+    is missing.
 </p>
 
 <p>
-    Even though it is hard so solve this kind of problems, a solution exists. The 'tainted kernel' thing I mentioned
-    above is the solution. In case of a tainted kernel (a kernel which uses closed source drivers), if a driver causes
-    problems, the kernel will suggest you to remove it in order to solve that problem. Pretty easy, right? =)))))
+    I wish you all the best and I hope you have a great day and even greater achievements. Cheers!
 </p>
-
-<p>
-    I think that the domain of operating systems is a thing that arouses my interest. It is basically the foundation of
-    every software that we are using today. Without it, our online lives wouldn't be possible today. This is the thing
-    that drives me to learn about how to configure and harden my sever. This is the first structural brick that I will
-    use in order to set my applications up and running.
-</p>
-
-<p>
-    I do not know what else I can talk about here, so I will simply finish this post by saying that I wish all of you a
-    good and productive day. Cheers!
-</p>
-
 
 {% endblock %}
