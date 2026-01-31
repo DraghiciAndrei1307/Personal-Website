@@ -1,0 +1,101 @@
+{% extends "no-sidebar.html" %}
+
+
+{% block title %}Day #13{% endblock %}
+
+{% block logo %}Day #13{% endblock %}
+
+{% block content_title %}I feel pretty good{% endblock %}
+{% block content_date %}Date: January 31, 2026{% endblock %}
+
+
+{%block content%}
+
+<h3>Introduction</h3>
+<br>
+
+
+<p>
+    Hello! Today it seems to be a good day. It is 10:28 in the morning and I drink my coffee (and XL vanilla latte) at
+    a Ted's Coffee Shop. Even though I feel a little bit of fatigue from the past days, I really feel like I want to
+    start being productive. I hope that will be able to finish the tasks planned for today.
+</p>
+
+<p>
+    This week was a pretty good one mainly due to the fact that I managed to put the things in motion with a project
+    that our local team from Romania struggled for six months to even start it. You know how the things are in big
+    corporate firms. It takes a lot of time until you manage to get all the roles and access rights to different
+    resources. In our case, it took a really long time to get all the roles for creating API calls to endpoints like
+    our vault platform endpoint, the OEM (Oracle Enterprise Manager) endpoint and even the Vertex API endpoint.
+</p>
+
+<p>
+    Let me tell you about this upskilling project and what I managed to solve until now. So, the project aims to use AI
+    capabilities in order to perform, for the starter, basic ORACLE DBA tasks. What we want to do, as an MVP, is to get
+    metrics like tablespace usage of an Oracle db, create a record with different timestamps and their corresponding
+    value of the tablespace usage so that we can use this record in order to generate a prompt for the Gemini API. With
+    this prompt, Gemini will start an analysis of these patterns and will predict when the tablespace usage will reach
+    100%. We will take this prediction and will parse it in order to see if a threshold was exceeded. If threshold
+    exceeded, then a ticket will be created so that the DBAs will perform the right actions in order to prevent a fully
+    occupied tablespace.
+</p>
+
+<p>
+    What I managed to in one and a half day of working at this project? I managed to speed up the process of gathering
+    the necessary roles and access rights and managed to put the things in motion. First, after I obtained the user and
+    the password for the 2-factor authentication (I owe a beer to the guy from the vault management team) to the vault
+    endpoint, I performed the POST request (using the Postman) in order to get the access token and after that
+    I managed to perform a GET so that I can obtain the secrets.
+</p>
+
+<p>
+    With those secrets, a user and a password, I managed to perform the Basic Auth to the OEM endpoint and get the
+    metrics for the tablespace usage. This is basically all that I managed to accomplish in one and a half day. Monday,
+    when I return to work, I will try to finish the MVP. What I have to do is it store those metrics from the OEM into
+    a monitoring database (so that I can create a historical data record) and after that generate the prompt and send it
+    to Gemini.
+</p>
+
+<p>
+    In the end, after I managed to complete these actions (perform those API calls to the vault and the OEM endpoints)
+    firstly in Postman, and after using Python scripts, I created a README.mg file where I focused on these topics:
+</p>
+
+<ul>
+    <li>Description</li>
+    <li>How to install and use the project</li>
+    <li>Why is it noteworthy</li>
+    <li>Team members</li>
+</ul>
+
+<p>
+    As a conclusion to this topic, I can say that I am really proud of how the repo looks so far. A week ago, I
+    started an Udemy course regarding the Git&GitHub topic (link:
+    https://www.udemy.com/course/git-and-github-bootcamp/?couponCode=KEEPLEARNING). I learned a lot of things about
+    Git and also things like collabioration workflows and how to create clean commits and work in a more structured
+    and proffesional way. Even my colleagues appreciated my work and the way I created that project. The python scripts
+    are easy to read and understand. I created the requirements.txt file (for the necessary python packages), the
+    .gitignore file (I learned this from the Git&Github course) and I managed to also create a vault.yml encrypted file
+    so that I can store the user and the password for the 2-factor auth process of the vault endpoint. In the end, I
+    wraped all the things above with a clean and detailed README.md. It is a shame that I cannot share that repo here.
+    I am really proud of that outcome.
+</p>
+
+<p>
+    Anyway, moving on to the plans for this weekend, I plan to finish the Git&Github course and then start learning
+    about the Django Rest Framework. I have like 2 weeks to finish the Django Rest Framework Quickstart and then work
+    on a proof of concept project so that I can really start working with the guys that will develop the API for our
+    firm's cloud. I really want to make a good impression. I want to showcase them a professional repo with an API
+    created by me as proof that I can really help them with their task.
+</p>
+
+<p>
+    Anyway, I am going to start learning from the Git&Github course now. I feel like I got a boost of motivation after
+    writing this post. Until I leave from here (the coffee shop), I hope to finish like 2-3 sections from the course.
+</p>
+
+<p>
+    Wish me luck! See you!
+</p>
+
+{% endblock %}
